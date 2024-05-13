@@ -1,11 +1,9 @@
-[gd_scene load_steps=18 format=3 uid="uid://dsgkr8dadi26v"]
+[gd_scene load_steps=16 format=3 uid="uid://dsgkr8dadi26v"]
 
 [ext_resource type="Texture2D" uid="uid://dmtyuv44dckpr" path="res://addons/Tiny Swords/Factions/Knights/Troops/Warrior/Blue/Warrior_Blue.png" id="1_5ln16"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_wclyt"]
 [ext_resource type="Script" path="res://components/state_machine.gd" id="3_kylw3"]
 [ext_resource type="Script" path="res://states/idle.gd" id="4_uwmpb"]
-[ext_resource type="Script" path="res://states/run.gd" id="5_jehei"]
-[ext_resource type="Script" path="res://states/attack.gd" id="6_5wy26"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3j2oo"]
 radius = 17.1172
@@ -190,13 +188,7 @@ autoplay = "idle"
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_kylw3")
-initial_state = NodePath("IdleState")
+initial_state = NodePath("Idle")
 
-[node name="IdleState" type="Node" parent="StateMachine"]
+[node name="Idle" type="Node" parent="StateMachine"]
 script = ExtResource("4_uwmpb")
-
-[node name="RunState" type="Node" parent="StateMachine"]
-script = ExtResource("5_jehei")
-
-[node name="AttackState" type="Node" parent="StateMachine"]
-script = ExtResource("6_5wy26")
