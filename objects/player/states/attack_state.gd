@@ -22,5 +22,5 @@ func _process_state(delta: float) -> void:
 	if(current_cooldown == 0.0):
 		transition.emit(idle_state)
 
-func _physics_process_state(delta: float) -> void:
+func _physics_process_state(_delta: float) -> void:
 	player.velocity = Vector2.ZERO

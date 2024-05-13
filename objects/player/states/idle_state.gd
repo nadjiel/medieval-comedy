@@ -11,7 +11,7 @@ func _ready():
 func _enter_state() -> void:
 	animation_player.play("idle")
 
-func _process_state(delta: float) -> void:
+func _process_state(_delta: float) -> void:
 	if !player.input_dir.is_zero_approx():
 		transition.emit(run_state)
 	
@@ -20,5 +20,5 @@ func _process_state(delta: float) -> void:
 	
 	player.adjust_sprite_side()
 
-func _physics_process_state(delta: float) -> void:
+func _physics_process_state(_delta: float) -> void:
 	player.velocity = Vector2.ZERO
