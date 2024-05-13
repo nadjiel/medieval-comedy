@@ -19,6 +19,3 @@ func _process_state(_delta: float) -> void:
 		transition.emit(attack_state)
 	
 	player.adjust_sprite_side()
-
-func _physics_process_state(_delta: float) -> void:
-	player.velocity = Vector2.ZERO

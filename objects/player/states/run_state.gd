@@ -11,6 +11,10 @@ func _ready() -> void:
 func _enter_state() -> void:
 	animation_player.play("run")
 
+# WARNING: setting velocity outsite _physics_process
+func _exit_state() -> void:
+	player.velocity = Vector2.ZERO
+
 func _process_state(_delta: float) -> void:
 	if(player.input_dir.is_zero_approx()):
 		transition.emit(idle_state)
