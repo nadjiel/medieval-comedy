@@ -1,0 +1,79 @@
+[gd_scene load_steps=13 format=3 uid="uid://1jlrwqqfgfqh"]
+
+[ext_resource type="Texture2D" uid="uid://dphylkbhmevu6" path="res://addons/Tiny Swords/Factions/Goblins/Troops/Torch/Red/Torch_Red.png" id="1_8x5fl"]
+[ext_resource type="Script" path="res://scripts/goblin.gd" id="1_dvt6v"]
+[ext_resource type="Script" path="res://components/state_machine.gd" id="2_v2hm7"]
+[ext_resource type="Script" path="res://objects/enemies/goblin/states/follow_state.gd" id="3_uwcb0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_avfgv"]
+atlas = ExtResource("1_8x5fl")
+region = Rect2(0, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rd7x6"]
+atlas = ExtResource("1_8x5fl")
+region = Rect2(192, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nh53r"]
+atlas = ExtResource("1_8x5fl")
+region = Rect2(384, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mfae2"]
+atlas = ExtResource("1_8x5fl")
+region = Rect2(576, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mnlxe"]
+atlas = ExtResource("1_8x5fl")
+region = Rect2(768, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bloth"]
+atlas = ExtResource("1_8x5fl")
+region = Rect2(960, 192, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ho3nq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_avfgv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rd7x6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nh53r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mfae2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mnlxe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bloth")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3j2oo"]
+radius = 17.1172
+
+[node name="Goblin" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_dvt6v")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -32)
+sprite_frames = SubResource("SpriteFrames_ho3nq")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -16)
+shape = SubResource("CircleShape2D_3j2oo")
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("2_v2hm7")
+initial_state = NodePath("FollowState")
+
+[node name="FollowState" type="Node" parent="StateMachine"]
+script = ExtResource("3_uwcb0")
