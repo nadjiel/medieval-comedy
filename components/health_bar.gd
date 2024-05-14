@@ -5,6 +5,8 @@ class_name HealthBar
 
 signal damaged
 signal die
+signal healed
+signal replenished
 
 @export var max_health: float = 10.0
 
@@ -15,3 +17,9 @@ func damage(amount: float) -> void:
 	damaged.emit()
 	
 	if(health == 0.0): die.emit()
+
+func heal(amount: float) -> void:
+	health = clampf(health + amount, 0, max_health)
+	healed.emit()
+	
+	if(health == max_health): replenished.emit()

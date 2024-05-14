@@ -59,3 +59,6 @@ func on_death() -> void:
 		get_parent().add_child(death_effect)
 	
 	queue_free()
+
+func heal(amount: float) -> void:
+	if health_bar: health_bar.heal(amount)
