@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://c5fyiaumktwkj"]
+
+[ext_resource type="PackedScene" uid="uid://dsgkr8dadi26v" path="res://objects/player/player.tscn" id="1_llq2k"]
+[ext_resource type="Script" path="res://components/scene_spawner.gd" id="2_47eob"]
+[ext_resource type="PackedScene" uid="uid://1jlrwqqfgfqh" path="res://objects/enemies/goblin/goblin.tscn" id="3_vll41"]
+
+[sub_resource type="Curve2D" id="Curve2D_husun"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -55, -51, 0, 0, 0, 0, 1353, -43, 0, 0, 0, 0, 1350, 839, 0, 0, 0, 0, -70, 844, 0, 0, 0, 0, -58, -58)
+}
+point_count = 5
+
+[node name="EnemySpawnerTest" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_llq2k")]
+position = Vector2(543, 346)
+
+[node name="EnemySpawner" type="Path2D" parent="."]
+position = Vector2(-64, -64)
+curve = SubResource("Curve2D_husun")
+script = ExtResource("2_47eob")
+packed_scenes = Array[PackedScene]([ExtResource("3_vll41")])
+spawn_per_minute = 30.0
+
+[node name="PathFollow2D" type="PathFollow2D" parent="EnemySpawner"]
+position = Vector2(-55, -51)
+rotation = 0.00568176
