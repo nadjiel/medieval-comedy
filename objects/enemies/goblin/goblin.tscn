@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://1jlrwqqfgfqh"]
+[gd_scene load_steps=15 format=3 uid="uid://1jlrwqqfgfqh"]
 
 [ext_resource type="Texture2D" uid="uid://dphylkbhmevu6" path="res://addons/Tiny Swords/Factions/Goblins/Troops/Torch/Red/Torch_Red.png" id="1_8x5fl"]
 [ext_resource type="Script" path="res://scripts/goblin.gd" id="1_dvt6v"]
 [ext_resource type="Script" path="res://components/state_machine.gd" id="2_v2hm7"]
 [ext_resource type="Script" path="res://objects/enemies/goblin/states/follow_state.gd" id="3_uwcb0"]
 [ext_resource type="Script" path="res://components/health_bar.gd" id="3_wgmgq"]
+[ext_resource type="PackedScene" uid="uid://bwuv6n8tb44nw" path="res://objects/effects/death.tscn" id="4_si2fy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_avfgv"]
 atlas = ExtResource("1_8x5fl")
@@ -67,6 +68,8 @@ script = ExtResource("1_dvt6v")
 position = Vector2(0, -32)
 sprite_frames = SubResource("SpriteFrames_ho3nq")
 autoplay = "default"
+frame = 3
+frame_progress = 0.58999
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -16)
@@ -74,6 +77,7 @@ shape = SubResource("CircleShape2D_3j2oo")
 
 [node name="HealthBar" type="Node" parent="."]
 script = ExtResource("3_wgmgq")
+death_effect = ExtResource("4_si2fy")
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("2_v2hm7")
