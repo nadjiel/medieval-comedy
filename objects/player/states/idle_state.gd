@@ -12,7 +12,7 @@ func _enter_state() -> void:
 	animation_player.play("idle")
 
 func _process_state(_delta: float) -> void:
-	if !player.input_dir.is_zero_approx():
+	if !player.input_direction.is_zero_approx():
 		transition.emit(run_state)
 	
 	if player.input_attack:

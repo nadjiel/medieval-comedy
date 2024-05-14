@@ -1,5 +1,6 @@
 extends Area2D
 
+## Area2D that serves as a hitbox for an attack
 class_name AttackArea
 
 @export var damage: float
@@ -8,7 +9,9 @@ class_name AttackArea
 
 func attack(
 	attack_direction: Vector2,
-	attack_range: float = self.attack_range
+	damage: float = self.damage,
+	attack_range: float = self.attack_range,
+	target_group: String = self.target_group
 ) -> void:
 	var bodies = get_overlapping_bodies()
 	for body in bodies:
