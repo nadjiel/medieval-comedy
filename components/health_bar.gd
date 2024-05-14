@@ -1,5 +1,6 @@
 extends Node
 
+## This component can be used as a child of a Character to manage its health
 class_name HealthBar
 
 signal damaged

@@ -6,11 +6,11 @@ extends State
 var cooldown: float = 0.6
 var current_cooldown: float = cooldown
 
-func _ready():
+func _ready() -> void:
 	state_name = "attack"
 
 func _enter_state() -> void:
-	animation_player.play("attack_side_1")
+	animation_player.play("attack")
 
 func _exit_state() -> void:
 	current_cooldown = cooldown

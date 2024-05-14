@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://1jlrwqqfgfqh"]
+[gd_scene load_steps=16 format=3 uid="uid://1jlrwqqfgfqh"]
 
 [ext_resource type="Texture2D" uid="uid://dphylkbhmevu6" path="res://addons/Tiny Swords/Factions/Goblins/Troops/Torch/Red/Torch_Red.png" id="1_8x5fl"]
 [ext_resource type="Script" path="res://scripts/goblin.gd" id="1_dvt6v"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://components/health_bar.gd" id="3_wgmgq"]
 [ext_resource type="Script" path="res://components/attack_area.gd" id="4_qjewh"]
 [ext_resource type="Script" path="res://objects/enemies/goblin/states/idle_state.gd" id="6_7riba"]
+[ext_resource type="Script" path="res://objects/enemies/goblin/states/attack_state.gd" id="8_3qi45"]
 
 [sub_resource type="Animation" id="Animation_m7s1a"]
 resource_name = "idle"
@@ -72,6 +73,20 @@ tracks/0/keys = {
 "update": 1,
 "values": [Vector2i(0, 2), Vector2i(1, 2), Vector2i(2, 2), Vector2i(3, 2), Vector2i(4, 2), Vector2i(5, 2)]
 }
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"attack"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4dy0t"]
 _data = {
@@ -85,7 +100,7 @@ _data = {
 radius = 17.1172
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j4jco"]
-radius = 60.208
+radius = 76.0066
 
 [node name="Goblin" type="CharacterBody2D" node_paths=PackedStringArray("sprite") groups=["enemies"]]
 motion_mode = 1
@@ -115,6 +130,9 @@ script = ExtResource("3_wgmgq")
 [node name="AttackArea" type="Area2D" parent="."]
 position = Vector2(0, -16)
 script = ExtResource("4_qjewh")
+damage = 2.0
+attack_range = 0.2
+target_group = "players"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
 shape = SubResource("CircleShape2D_j4jco")
@@ -129,3 +147,6 @@ script = ExtResource("6_7riba")
 
 [node name="FollowState" type="Node" parent="StateMachine"]
 script = ExtResource("3_uwcb0")
+
+[node name="AttackState" type="Node" parent="StateMachine"]
+script = ExtResource("8_3qi45")

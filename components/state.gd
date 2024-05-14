@@ -1,5 +1,6 @@
 extends Node
 
+## A State that can be used with a StateMachine for state logic
 class_name State
 
 signal transition
