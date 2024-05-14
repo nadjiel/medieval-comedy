@@ -55,7 +55,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0kxnm")
 }],
-"loop": true,
+"loop": false,
 "name": &"default",
 "speed": 10.0
 }]
@@ -70,6 +70,7 @@ heal_points = 50.0
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -27)
 sprite_frames = SubResource("SpriteFrames_px6s2")
+autoplay = "default"
 frame = 4
 frame_progress = 0.463603
 
