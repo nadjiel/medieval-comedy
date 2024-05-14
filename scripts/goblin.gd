@@ -1,4 +1,4 @@
-extends CharacterBody2D
+extends Enemy
 
 # Speed in tiles per second
 @export var speed: float = 3

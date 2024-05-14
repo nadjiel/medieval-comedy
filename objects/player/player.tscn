@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dsgkr8dadi26v"]
+[gd_scene load_steps=19 format=3 uid="uid://dsgkr8dadi26v"]
 
 [ext_resource type="Texture2D" uid="uid://dmtyuv44dckpr" path="res://addons/Tiny Swords/Factions/Knights/Troops/Warrior/Blue/Warrior_Blue.png" id="1_5ln16"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_wclyt"]
@@ -72,6 +72,20 @@ tracks/0/keys = {
 "update": 1,
 "values": [Vector2i(0, 2), Vector2i(1, 2), Vector2i(2, 2), Vector2i(3, 2), Vector2i(4, 2), Vector2i(5, 2)]
 }
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"attack"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_o6c04"]
 resource_name = "attack_right_2"
@@ -87,6 +101,20 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [Vector2i(0, 3), Vector2i(1, 3), Vector2i(2, 3), Vector2i(3, 3), Vector2i(4, 3), Vector2i(5, 3)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"attack"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_3l83v"]
@@ -168,6 +196,9 @@ _data = {
 "run": SubResource("Animation_ym2cv")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_5oe5g"]
+radius = 100.404
+
 [node name="Player" type="CharacterBody2D"]
 motion_mode = 1
 script = ExtResource("1_wclyt")
@@ -187,6 +218,13 @@ libraries = {
 "": SubResource("AnimationLibrary_w0g3d")
 }
 autoplay = "idle"
+
+[node name="MeleeArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MeleeArea"]
+position = Vector2(0, -16)
+shape = SubResource("CircleShape2D_5oe5g")
+debug_color = Color(0.57, 0.1425, 0.38475, 0.156863)
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_kylw3")
