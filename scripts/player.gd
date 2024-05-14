@@ -1,13 +1,11 @@
-extends CharacterBody2D
+extends Character
 
 # Speed in tiles per second
 @export var speed: float = 6.0
-@export var sword_damage: float = 3.0
-@export_range(-1, 1) var attack_range: float = .25
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var sprite: Sprite2D = $Sprite2D
-@onready var melee_area: Area2D = $MeleeArea
+@onready var sword_attack_area: AttackArea = $SwordAttackArea
 
 var input_dir: Vector2
 var input_attack: bool
@@ -34,16 +32,4 @@ func adjust_sprite_side() -> void:
 		sprite.flip_h = false
 
 func attack() -> void:
-	var bodies = melee_area.get_overlapping_bodies()
-	for body in bodies:
-		if !(body is Enemy): continue
-		
-		var enemy: Enemy = body
-		
-		var enemy_direction: Vector2 = (enemy.position - position).normalized()
-		var attack_direction: Vector2 = facing_direction
-		
-		var dot_product = enemy_direction.dot(attack_direction)
-		
-		if(dot_product >= attack_range):
-			enemy.damage(sword_damage)
+	sword_attack_area.attack(facing_direction)

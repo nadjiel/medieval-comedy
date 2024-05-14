@@ -1,8 +1,9 @@
-[gd_scene load_steps=19 format=3 uid="uid://dsgkr8dadi26v"]
+[gd_scene load_steps=20 format=3 uid="uid://dsgkr8dadi26v"]
 
 [ext_resource type="Texture2D" uid="uid://dmtyuv44dckpr" path="res://addons/Tiny Swords/Factions/Knights/Troops/Warrior/Blue/Warrior_Blue.png" id="1_5ln16"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_wclyt"]
 [ext_resource type="Script" path="res://components/state_machine.gd" id="3_kylw3"]
+[ext_resource type="Script" path="res://components/attack_area.gd" id="3_la7w0"]
 [ext_resource type="Script" path="res://objects/player/states/idle_state.gd" id="4_xaisu"]
 [ext_resource type="Script" path="res://objects/player/states/run_state.gd" id="5_bjgxf"]
 [ext_resource type="Script" path="res://objects/player/states/attack_state.gd" id="6_px48t"]
@@ -219,10 +220,14 @@ libraries = {
 }
 autoplay = "idle"
 
-[node name="MeleeArea" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MeleeArea"]
+[node name="SwordAttackArea" type="Area2D" parent="."]
 position = Vector2(0, -16)
+script = ExtResource("3_la7w0")
+damage = 3.0
+attack_range = 0.25
+target_group = "enemies"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SwordAttackArea"]
 shape = SubResource("CircleShape2D_5oe5g")
 debug_color = Color(0.57, 0.1425, 0.38475, 0.156863)
 

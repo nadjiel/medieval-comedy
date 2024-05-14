@@ -60,7 +60,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_3j2oo"]
 radius = 17.1172
 
-[node name="Goblin" type="CharacterBody2D"]
+[node name="Goblin" type="CharacterBody2D" groups=["enemies"]]
 motion_mode = 1
 script = ExtResource("1_dvt6v")
 
