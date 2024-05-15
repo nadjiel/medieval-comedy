@@ -11,13 +11,18 @@ config_version=5
 [application]
 
 config/name="Tiny Swords"
-run/main_scene="res://scenes/test/enemy_spawner_test.tscn"
+run/main_scene="res://scenes/test/ui_test.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 GameManager="*res://scripts/game_manager.gd"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
 
 [input]
 

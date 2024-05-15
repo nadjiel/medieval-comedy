@@ -6,7 +6,7 @@
 
 [sub_resource type="Curve2D" id="Curve2D_husun"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -55, -51, 0, 0, 0, 0, 1353, -43, 0, 0, 0, 0, 1350, 839, 0, 0, 0, 0, -70, 844, 0, 0, 0, 0, -58, -58)
+"points": PackedVector2Array(0, 0, 0, 0, -55, -51, 0, 0, 0, 0, 1437, -44, 0, 0, 0, 0, 1444, 855, 0, 0, 0, 0, -70, 844, 0, 0, 0, 0, -58, -58)
 }
 point_count = 5
 
@@ -24,4 +24,4 @@ spawn_per_minute = 30.0
 
 [node name="PathFollow2D" type="PathFollow2D" parent="EnemySpawner"]
 position = Vector2(-55, -51)
-rotation = 0.00568176
+rotation = 0.00469165

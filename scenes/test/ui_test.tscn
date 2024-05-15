@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://upjawcahax6y"]
+
+[ext_resource type="PackedScene" uid="uid://dsgkr8dadi26v" path="res://objects/player/player.tscn" id="1_xxyyn"]
+[ext_resource type="PackedScene" uid="uid://1jlrwqqfgfqh" path="res://objects/enemies/goblin/goblin.tscn" id="2_jmp6n"]
+
+[node name="UiTest" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_xxyyn")]
+position = Vector2(632, 376)
+
+[node name="Goblin" parent="." instance=ExtResource("2_jmp6n")]
+position = Vector2(926, 389)
