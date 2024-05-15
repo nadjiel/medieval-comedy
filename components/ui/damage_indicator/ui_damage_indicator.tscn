@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7mdjin01by1h"]
+
+[ext_resource type="Script" path="res://components/ui/damage_indicator/ui_damage_indicator.gd" id="1_linih"]
+
+[node name="UIDamageIndicator" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_linih")

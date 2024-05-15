@@ -40,7 +40,7 @@ func adjust_sprite_side() -> void:
 func damage(amount: float) -> void:
 	if health_bar: health_bar.damage(amount)
 
-func on_damaged() -> void:
+func on_damaged(amount: float) -> void:
 	print(self.name, " damaged, health: ", health_bar.health)
 	if !damage_color: return
 	

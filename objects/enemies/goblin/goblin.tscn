@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://1jlrwqqfgfqh"]
+[gd_scene load_steps=17 format=3 uid="uid://1jlrwqqfgfqh"]
 
 [ext_resource type="Texture2D" uid="uid://dphylkbhmevu6" path="res://addons/Tiny Swords/Factions/Goblins/Troops/Torch/Red/Torch_Red.png" id="1_8x5fl"]
 [ext_resource type="Script" path="res://scripts/goblin.gd" id="1_dvt6v"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://components/attack_area.gd" id="4_qjewh"]
 [ext_resource type="Script" path="res://objects/enemies/goblin/states/idle_state.gd" id="6_7riba"]
 [ext_resource type="Script" path="res://objects/enemies/goblin/states/attack_state.gd" id="8_3qi45"]
+[ext_resource type="PackedScene" uid="uid://c7mdjin01by1h" path="res://components/ui/damage_indicator/ui_damage_indicator.tscn" id="9_kwhm1"]
 
 [sub_resource type="Animation" id="Animation_0xb7i"]
 length = 0.001
@@ -150,3 +151,6 @@ script = ExtResource("3_uwcb0")
 
 [node name="AttackState" type="Node" parent="StateMachine"]
 script = ExtResource("8_3qi45")
+
+[node name="UIDamageIndicator" parent="." node_paths=PackedStringArray("health_bar") instance=ExtResource("9_kwhm1")]
+health_bar = NodePath("../HealthBar")
