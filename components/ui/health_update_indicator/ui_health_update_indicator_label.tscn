@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://ude0j7idklkh"]
 
-[ext_resource type="FontFile" uid="uid://c3jfsajpv7i8e" path="res://resources/fonts/jaro/jaro_32px_regular.tres" id="1_wgpri"]
+[ext_resource type="FontFile" uid="uid://c3jfsajpv7i8e" path="res://resources/fonts/jaro/jaro_32px_regular.tres" id="1_f3hih"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_f4tm0"]
-font = ExtResource("1_wgpri")
+font = ExtResource("1_f3hih")
 font_size = 32
 outline_size = 8
 outline_color = Color(0, 0, 0, 1)
@@ -13,7 +13,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("UIDamageIndicatorLabel:position")
+tracks/0/path = NodePath("UIHealthUpdateIndicatorLabel:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -25,7 +25,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("UIDamageIndicatorLabel:modulate")
+tracks/1/path = NodePath("UIHealthUpdateIndicatorLabel:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -40,7 +40,7 @@ resource_name = "popup"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("UIDamageIndicatorLabel:position")
+tracks/0/path = NodePath("UIHealthUpdateIndicatorLabel:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -52,7 +52,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("UIDamageIndicatorLabel:modulate")
+tracks/1/path = NodePath("UIHealthUpdateIndicatorLabel:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -64,7 +64,7 @@ tracks/1/keys = {
 tracks/2/type = "method"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("UIDamageIndicatorLabel")
+tracks/2/path = NodePath("UIHealthUpdateIndicatorLabel")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -82,7 +82,7 @@ _data = {
 "popup": SubResource("Animation_rxyha")
 }
 
-[node name="UIDamageIndicatorLabel" type="Label"]
+[node name="UIHealthUpdateIndicatorLabel" type="Label"]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0

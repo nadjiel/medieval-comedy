@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7mdjin01by1h"]
+
+[ext_resource type="Script" path="res://components/ui/health_update_indicator/ui_health_update_indicator.gd" id="1_dtoyv"]
+
+[node name="UIHealthUpdateIndicator" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_dtoyv")

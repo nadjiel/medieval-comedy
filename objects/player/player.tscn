@@ -9,7 +9,7 @@
 [ext_resource type="Script" path="res://objects/player/states/run_state.gd" id="5_bjgxf"]
 [ext_resource type="Script" path="res://objects/player/states/attack_state.gd" id="6_px48t"]
 [ext_resource type="PackedScene" uid="uid://vp0t7td8mutu" path="res://components/ui/health_bar/ui_health_bar.tscn" id="9_8wwmt"]
-[ext_resource type="PackedScene" uid="uid://c7mdjin01by1h" path="res://components/ui/damage_indicator/ui_damage_indicator.tscn" id="10_ecnaf"]
+[ext_resource type="PackedScene" uid="uid://c7mdjin01by1h" path="res://components/ui/health_update_indicator/ui_health_update_indicator.tscn" id="10_81bqm"]
 
 [sub_resource type="Animation" id="Animation_0ijdu"]
 length = 0.001
@@ -255,5 +255,6 @@ script = ExtResource("6_px48t")
 [node name="UIHealthBar" parent="." node_paths=PackedStringArray("health_bar") instance=ExtResource("9_8wwmt")]
 health_bar = NodePath("../HealthBar")
 
-[node name="UIDamageIndicator" parent="." node_paths=PackedStringArray("health_bar") instance=ExtResource("10_ecnaf")]
+[node name="UIHealthUpdateIndicator" parent="." node_paths=PackedStringArray("health_bar") instance=ExtResource("10_81bqm")]
 health_bar = NodePath("../HealthBar")
+show_damage = false
