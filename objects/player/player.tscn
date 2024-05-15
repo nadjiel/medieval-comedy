@@ -256,5 +256,7 @@ script = ExtResource("6_px48t")
 health_bar = NodePath("../HealthBar")
 
 [node name="UIHealthUpdateIndicator" parent="." node_paths=PackedStringArray("health_bar") instance=ExtResource("10_81bqm")]
+offset_top = -32.0
+offset_bottom = -32.0
 health_bar = NodePath("../HealthBar")
 show_damage = false
