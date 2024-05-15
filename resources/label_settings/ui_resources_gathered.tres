@@ -1,0 +1,8 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://b5a2wacpxutb4"]
+
+[ext_resource type="FontFile" uid="uid://c3jfsajpv7i8e" path="res://resources/fonts/jaro/jaro_32px_regular.tres" id="1_4tdnt"]
+
+[resource]
+font = ExtResource("1_4tdnt")
+font_size = 24
+font_color = Color(0.0862745, 0.109804, 0.180392, 1)
