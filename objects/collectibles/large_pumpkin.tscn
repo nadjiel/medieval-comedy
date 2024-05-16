@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://daehq67rb50pg"]
+
+[ext_resource type="Script" path="res://objects/collectibles/collectible.gd" id="1_4x0r4"]
+[ext_resource type="Texture2D" uid="uid://b088nlo1k7mjo" path="res://addons/Tiny Swords/Deco/13.png" id="2_knnce"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1c83h"]
+radius = 23.0217
+
+[node name="MediumPumpkin" type="Area2D"]
+script = ExtResource("1_4x0r4")
+heal_points = 30.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-2, -9)
+texture = ExtResource("2_knnce")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -8)
+shape = SubResource("CircleShape2D_1c83h")

@@ -1,5 +1,4 @@
 TODO:
-	Item pumpkin medium, large
 	Fire object
 	Drop enemy bone
 	Sheep, explosion
@@ -12,3 +11,4 @@ TODO:
 	Section shop
 	Section gold mine
 	Section scarecrow
+	Bug with item update UI: 2 in a row show the same value
