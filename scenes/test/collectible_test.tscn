@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://dg6o3c3t26h5o"]
 
 [ext_resource type="PackedScene" uid="uid://dsgkr8dadi26v" path="res://objects/player/player.tscn" id="1_sbqaf"]
-[ext_resource type="PackedScene" uid="uid://brddcuyjtbjbl" path="res://objects/collectibles/beef/beef.tscn" id="2_uk4hg"]
+[ext_resource type="PackedScene" uid="uid://brddcuyjtbjbl" path="res://objects/collectibles/beef.tscn" id="2_uk4hg"]
 [ext_resource type="PackedScene" uid="uid://dv8lsdopy4edq" path="res://objects/collectibles/tiny_mushroom.tscn" id="3_2m6j0"]
 [ext_resource type="PackedScene" uid="uid://bi1y5slb3njcm" path="res://objects/collectibles/medium_mushroom.tscn" id="4_nornb"]
 [ext_resource type="PackedScene" uid="uid://ckal2m8cb0l67" path="res://objects/collectibles/large_mushroom.tscn" id="5_7s5lp"]
