@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://upjawcahax6y"]
+[gd_scene load_steps=7 format=3 uid="uid://upjawcahax6y"]
 
 [ext_resource type="PackedScene" uid="uid://dsgkr8dadi26v" path="res://objects/player/player.tscn" id="1_xxyyn"]
 [ext_resource type="PackedScene" uid="uid://1jlrwqqfgfqh" path="res://objects/enemies/goblin/goblin.tscn" id="2_jmp6n"]
 [ext_resource type="PackedScene" uid="uid://brddcuyjtbjbl" path="res://objects/collectibles/beef/beef.tscn" id="3_262no"]
 [ext_resource type="PackedScene" uid="uid://dkk2kpnd4qj7j" path="res://components/ui/resources_gathered/ui_resources_gathered.tscn" id="4_7aqqf"]
 [ext_resource type="PackedScene" uid="uid://cpytrh26s0f2a" path="res://components/ui/chapter_time/ui_chapter_time.tscn" id="5_scxap"]
+[ext_resource type="PackedScene" uid="uid://0vcn4xfc63kr" path="res://components/ui/chapter_title/ui_chapter_title.tscn" id="6_551xb"]
 
 [node name="UiTest" type="Node2D"]
 
@@ -19,15 +20,12 @@ position = Vector2(338, 385)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="UiChapterTime" parent="CanvasLayer" instance=ExtResource("5_scxap")]
+
 [node name="UIResourcesGathered" parent="CanvasLayer" instance=ExtResource("4_7aqqf")]
 
-[node name="Control" type="Control" parent="CanvasLayer"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="UiChapterTime" parent="CanvasLayer/Control" instance=ExtResource("5_scxap")]
-layout_mode = 1
+[node name="UIChapterTitle" parent="CanvasLayer" instance=ExtResource("6_551xb")]
+offset_left = 640.0
+offset_top = 300.0
+offset_right = 1280.0
+offset_bottom = 420.0
