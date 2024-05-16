@@ -1,14 +1,25 @@
-[gd_scene load_steps=5 format=3 uid="uid://ddcvxpvycht3x"]
+[gd_scene load_steps=6 format=3 uid="uid://ddcvxpvycht3x"]
 
 [ext_resource type="PackedScene" uid="uid://dsgkr8dadi26v" path="res://objects/player/player.tscn" id="1_josf7"]
 [ext_resource type="Script" path="res://components/state_machine.gd" id="2_7836s"]
 [ext_resource type="Script" path="res://components/state.gd" id="3_64kak"]
 [ext_resource type="Script" path="res://scripts/chapters/chapter1.gd" id="3_dx104"]
+[ext_resource type="PackedScene" uid="uid://bt41bk87qsbm4" path="res://components/enemy_spawner.tscn" id="5_lpngx"]
 
 [node name="ChapterTest" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_josf7")]
-position = Vector2(610, 371)
+position = Vector2(640, 360)
+
+[node name="SpawnerTransform" type="RemoteTransform2D" parent="Player"]
+remote_path = NodePath("../../EnemySpawner")
+update_rotation = false
+update_scale = false
+
+[node name="CameraTransform" type="RemoteTransform2D" parent="Player"]
+remote_path = NodePath("../../Camera2D")
+update_rotation = false
+update_scale = false
 
 [node name="ChapterManager" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("2_7836s")
@@ -19,3 +30,9 @@ script = ExtResource("3_dx104")
 
 [node name="Chapter2" type="Node" parent="ChapterManager"]
 script = ExtResource("3_64kak")
+
+[node name="EnemySpawner" parent="." instance=ExtResource("5_lpngx")]
+position = Vector2(640, 360)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(640, 360)
