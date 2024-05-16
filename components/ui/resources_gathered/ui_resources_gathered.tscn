@@ -23,45 +23,6 @@ region = Rect2(812, 56, 44, 44)
 atlas = ExtResource("2_n0843")
 region = Rect2(44, 48, 48, 52)
 
-[sub_resource type="Animation" id="Animation_trjd0"]
-resource_name = "unroll"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:size")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(0.05, 1),
-"update": 0,
-"values": [Vector2(0, 95), Vector2(274, 95)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(0.05, 1),
-"update": 0,
-"values": [Vector2(1280, 0), Vector2(1006, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("MarginContainer:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(-2.5, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
 [sub_resource type="Animation" id="Animation_gpv3h"]
 length = 0.001
 tracks/0/type = "value"
@@ -101,6 +62,45 @@ tracks/2/keys = {
 "values": [Color(1, 1, 1, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_trjd0"]
+resource_name = "unroll"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.05, 1),
+"update": 0,
+"values": [Vector2(0, 95), Vector2(274, 95)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.05, 1),
+"update": 0,
+"values": [Vector2(1280, 0), Vector2(1006, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MarginContainer:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(-2.5, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bih86"]
 _data = {
 "RESET": SubResource("Animation_gpv3h"),
@@ -109,6 +109,8 @@ _data = {
 
 [node name="UIResourcesGathered" type="Panel"]
 layout_direction = 3
+offset_left = -1280.0
+offset_right = -1280.0
 offset_bottom = 95.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_fcpgg")
 

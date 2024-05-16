@@ -1,0 +1,116 @@
+[gd_scene load_steps=10 format=3 uid="uid://cpytrh26s0f2a"]
+
+[ext_resource type="Texture2D" uid="uid://b2pck3vkybb2d" path="res://addons/Tiny Swords/UI/Banners/Carved_9Slides.png" id="1_gmwih"]
+[ext_resource type="FontFile" uid="uid://dy5qika8i1phg" path="res://resources/fonts/jaro/jaro_12px_regular.tres" id="2_w7o6c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o3g6b"]
+atlas = ExtResource("1_gmwih")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nvu87"]
+texture = SubResource("AtlasTexture_o3g6b")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_65kup"]
+bg_color = Color(0.35, 0.35, 0.35, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_afe16"]
+bg_color = Color(0.3114, 0.6, 0.156, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="Animation" id="Animation_m48bh"]
+resource_name = "popup"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.05, 1),
+"update": 0,
+"values": [Vector2(320, -64), Vector2(320, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_gdgtc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(320, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n5gkh"]
+_data = {
+"RESET": SubResource("Animation_gdgtc"),
+"popup": SubResource("Animation_m48bh")
+}
+
+[node name="UiChapterTime" type="Panel"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 320.0
+offset_right = 960.0
+offset_bottom = 64.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_nvu87")
+
+[node name="TimeBar" type="ProgressBar" parent="."]
+custom_minimum_size = Vector2(576, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2.0
+offset_top = -13.5
+offset_right = 2.0
+offset_bottom = 13.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_65kup")
+theme_override_styles/fill = SubResource("StyleBoxFlat_afe16")
+value = 50.0
+show_percentage = false
+
+[node name="TimePassed" type="Label" parent="TimeBar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.5
+offset_top = -11.5
+offset_right = 20.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_w7o6c")
+theme_override_font_sizes/font_size = 16
+text = "20:00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_n5gkh")
+}
