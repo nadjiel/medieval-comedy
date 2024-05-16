@@ -1,5 +1,4 @@
 TODO:
-	Item mushroom tiny, medium, large
 	Item pumpkin medium, large
 	Fire object
 	Drop enemy bone

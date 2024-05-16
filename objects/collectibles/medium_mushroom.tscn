@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bi1y5slb3njcm"]
+
+[ext_resource type="Script" path="res://objects/collectibles/collectible.gd" id="1_rmt4o"]
+[ext_resource type="Texture2D" uid="uid://bbswlaisijf5y" path="res://addons/Tiny Swords/Deco/02.png" id="2_3ll2l"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1c83h"]
+radius = 14.0357
+
+[node name="MediumMushroom" type="Area2D"]
+script = ExtResource("1_rmt4o")
+heal_points = 10.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-2, -9)
+texture = ExtResource("2_3ll2l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -8)
+shape = SubResource("CircleShape2D_1c83h")
