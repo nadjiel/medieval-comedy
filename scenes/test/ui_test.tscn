@@ -20,8 +20,6 @@ position = Vector2(338, 385)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="UIResourcesGathered" parent="CanvasLayer" instance=ExtResource("4_7aqqf")]
-offset_left = 0.0
-offset_right = 0.0
 
 [node name="Control" type="Control" parent="CanvasLayer"]
 layout_mode = 3

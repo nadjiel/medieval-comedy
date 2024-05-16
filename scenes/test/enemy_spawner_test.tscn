@@ -1,27 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://c5fyiaumktwkj"]
+[gd_scene load_steps=4 format=3 uid="uid://c5fyiaumktwkj"]
 
 [ext_resource type="PackedScene" uid="uid://dsgkr8dadi26v" path="res://objects/player/player.tscn" id="1_llq2k"]
-[ext_resource type="Script" path="res://components/scene_spawner.gd" id="2_47eob"]
+[ext_resource type="PackedScene" uid="uid://bt41bk87qsbm4" path="res://components/enemy_spawner.tscn" id="2_rinta"]
 [ext_resource type="PackedScene" uid="uid://1jlrwqqfgfqh" path="res://objects/enemies/goblin/goblin.tscn" id="3_vll41"]
-
-[sub_resource type="Curve2D" id="Curve2D_husun"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, -55, -51, 0, 0, 0, 0, 1437, -44, 0, 0, 0, 0, 1444, 855, 0, 0, 0, 0, -70, 844, 0, 0, 0, 0, -58, -58)
-}
-point_count = 5
 
 [node name="EnemySpawnerTest" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_llq2k")]
-position = Vector2(543, 346)
+position = Vector2(640, 360)
 
-[node name="EnemySpawner" type="Path2D" parent="."]
-position = Vector2(-64, -64)
-curve = SubResource("Curve2D_husun")
-script = ExtResource("2_47eob")
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
+remote_path = NodePath("../../EnemySpawner")
+update_rotation = false
+update_scale = false
+
+[node name="EnemySpawner" parent="." instance=ExtResource("2_rinta")]
+position = Vector2(640, 360)
 packed_scenes = Array[PackedScene]([ExtResource("3_vll41")])
 spawn_per_minute = 30.0
-
-[node name="PathFollow2D" type="PathFollow2D" parent="EnemySpawner"]
-position = Vector2(-55, -51)
-rotation = 0.00469165

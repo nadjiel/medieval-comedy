@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bt41bk87qsbm4"]
+
+[ext_resource type="Script" path="res://components/scene_spawner.gd" id="1_xgbra"]
+
+[sub_resource type="Curve2D" id="Curve2D_xm52p"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -768, -488, 0, 0, 0, 0, 768, -488, 0, 0, 0, 0, 768, 488, 0, 0, 0, 0, -768, 488, 0, 0, 0, 0, -768, -488)
+}
+point_count = 5
+
+[node name="EnemySpawner" type="Path2D"]
+curve = SubResource("Curve2D_xm52p")
+script = ExtResource("1_xgbra")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+position = Vector2(-768, -488)
