@@ -36,3 +36,5 @@ position = Vector2(640, 360)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(640, 360)
+
+[node name="UI" type="CanvasLayer" parent="."]
