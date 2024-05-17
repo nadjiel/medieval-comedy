@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://b22ovul00vivg"]
+[gd_scene load_steps=6 format=3 uid="uid://b22ovul00vivg"]
 
 [ext_resource type="PackedScene" uid="uid://dsgkr8dadi26v" path="res://objects/player/player.tscn" id="1_56q50"]
 [ext_resource type="PackedScene" uid="uid://c5ia0b8bufm8g" path="res://objects/fire.tscn" id="2_wvb4o"]
 [ext_resource type="PackedScene" uid="uid://1jlrwqqfgfqh" path="res://objects/enemies/goblin/goblin.tscn" id="3_kuqxl"]
 [ext_resource type="PackedScene" uid="uid://q07hy8acvmtc" path="res://objects/explosion.tscn" id="4_dpset"]
+[ext_resource type="PackedScene" uid="uid://rbykcmxeje3j" path="res://objects/sheep/sheep.tscn" id="5_ag07k"]
 
 [node name="ObjectTest" type="Node2D"]
 y_sort_enabled = true
@@ -19,3 +20,6 @@ position = Vector2(833, 401)
 
 [node name="Explosion" parent="." instance=ExtResource("4_dpset")]
 position = Vector2(797, 406)
+
+[node name="Sheep" parent="." instance=ExtResource("5_ag07k")]
+position = Vector2(132, 246)
