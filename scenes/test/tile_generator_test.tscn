@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://msm6uq2q3d50"]
+[gd_scene load_steps=7 format=3 uid="uid://msm6uq2q3d50"]
 
+[ext_resource type="Script" path="res://components/tile_generator.gd" id="1_5bmb2"]
 [ext_resource type="PackedScene" uid="uid://dsgkr8dadi26v" path="res://objects/player/player.tscn" id="1_w3e05"]
 [ext_resource type="Texture2D" uid="uid://c5qlpnc3dcp2t" path="res://addons/Tiny Swords/Terrain/Ground/Tilemap_Flat.png" id="1_w4irh"]
+[ext_resource type="Script" path="res://components/camera_tracker.gd" id="4_6wlap"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m73s5"]
 texture = ExtResource("1_w4irh")
@@ -63,6 +65,8 @@ layer_0/tile_data = PackedInt32Array(0, 65536, 1, 65536, 65536, 1, 131072, 65536
 layer_1/name = "details"
 layer_1/y_sort_enabled = true
 layer_1/tile_data = PackedInt32Array(65536, 262144, 0, 458752, 262144, 0, 327682, 262144, 0, 3, 262144, 0, 65540, 262144, 0, 262148, 262144, 0, 720902, 262144, 0, 589831, 262144, 0, 655367, 262144, 0, 720903, 262144, 0, 589832, 262144, 0, 589834, 262144, 0, 524300, 262144, 0, 589836, 262144, 0, 16, 262144, 0, 524304, 262144, 0, 196627, 262144, 0)
+script = ExtResource("1_5bmb2")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(640, 360)
+script = ExtResource("4_6wlap")
