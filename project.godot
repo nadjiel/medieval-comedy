@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="Tiny Swords"
-run/main_scene="res://scenes/test/object_test.tscn"
+config/name="Medieval Comedy"
+run/main_scene="res://scenes/world.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 

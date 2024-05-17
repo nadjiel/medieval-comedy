@@ -1,5 +1,4 @@
 TODO:
-	Sheep, explosion
 	Enemy barrel
 	Enemy TNT guy
 	Enemy archer, tower
@@ -10,3 +9,4 @@ TODO:
 	Section gold mine
 	Section scarecrow
 	Bug with item update UI: 2 in a row show the same value
+	Bug with the sheep roll not rolling fluidly
