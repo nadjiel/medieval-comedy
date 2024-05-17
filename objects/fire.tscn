@@ -1,0 +1,115 @@
+[gd_scene load_steps=14 format=3 uid="uid://c5ia0b8bufm8g"]
+
+[ext_resource type="Script" path="res://scripts/fire.gd" id="1_mwukm"]
+[ext_resource type="Texture2D" uid="uid://n0awi88b65hy" path="res://addons/Tiny Swords/Effects/Fire/Fire.png" id="2_65hwx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_byuek"]
+atlas = ExtResource("2_65hwx")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2qa3"]
+atlas = ExtResource("2_65hwx")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qw1bm"]
+atlas = ExtResource("2_65hwx")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wc7bp"]
+atlas = ExtResource("2_65hwx")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mejpi"]
+atlas = ExtResource("2_65hwx")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c8tm0"]
+atlas = ExtResource("2_65hwx")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vawsp"]
+atlas = ExtResource("2_65hwx")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_drxgq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_byuek")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g2qa3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qw1bm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wc7bp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mejpi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c8tm0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vawsp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1rxaw"]
+radius = 40.0
+
+[sub_resource type="Animation" id="Animation_o2as6"]
+resource_name = "burn"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.3, 0.6, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"values": [{
+"args": [],
+"method": &"burn"
+}, {
+"args": [],
+"method": &"burn"
+}, {
+"args": [],
+"method": &"burn"
+}, {
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_278bw"]
+_data = {
+"burn": SubResource("Animation_o2as6")
+}
+
+[node name="Fire" type="Area2D"]
+script = ExtResource("1_mwukm")
+damage = 1.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -47)
+sprite_frames = SubResource("SpriteFrames_drxgq")
+autoplay = "default"
+frame_progress = 0.269294
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -19)
+shape = SubResource("CircleShape2D_1rxaw")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_278bw")
+}
+autoplay = "burn"

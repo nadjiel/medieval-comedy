@@ -1,6 +1,5 @@
 TODO:
 	Fire object
-	Drop enemy bone
 	Sheep, explosion
 	Enemy barrel
 	Enemy TNT guy
