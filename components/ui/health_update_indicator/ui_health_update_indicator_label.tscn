@@ -83,15 +83,16 @@ _data = {
 }
 
 [node name="UIHealthUpdateIndicatorLabel" type="Label"]
+modulate = Color(1, 1, 1, 0)
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -664.5
-offset_top = -760.0
+offset_top = -792.0
 offset_right = -615.5
-offset_bottom = -720.0
+offset_bottom = -752.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "1"

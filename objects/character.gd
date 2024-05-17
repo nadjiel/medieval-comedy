@@ -41,7 +41,6 @@ func damage(amount: float) -> void:
 	if health_bar: health_bar.damage(amount)
 
 func on_damaged(amount: float) -> void:
-	print(self.name, " damaged, health: ", health_bar.health)
 	if !damage_color: return
 	
 	modulate = damage_color
@@ -52,7 +51,6 @@ func on_damaged(amount: float) -> void:
 	tween.tween_property(self, "modulate", Color.WHITE, .25)
 
 func on_death() -> void:
-	print(death_effect_scene)
 	if death_effect_scene:
 		var death_effect = death_effect_scene.instantiate()
 		death_effect.position = position

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dg6o3c3t26h5o"]
+[gd_scene load_steps=9 format=3 uid="uid://dg6o3c3t26h5o"]
 
 [ext_resource type="PackedScene" uid="uid://dsgkr8dadi26v" path="res://objects/player/player.tscn" id="1_sbqaf"]
 [ext_resource type="PackedScene" uid="uid://brddcuyjtbjbl" path="res://objects/collectibles/beef.tscn" id="2_uk4hg"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ckal2m8cb0l67" path="res://objects/collectibles/large_mushroom.tscn" id="5_7s5lp"]
 [ext_resource type="PackedScene" uid="uid://c4yh7ovtgdnof" path="res://objects/collectibles/medium_pumpkin.tscn" id="6_dilmf"]
 [ext_resource type="PackedScene" uid="uid://daehq67rb50pg" path="res://objects/collectibles/large_pumpkin.tscn" id="7_5b26u"]
+[ext_resource type="PackedScene" uid="uid://1jlrwqqfgfqh" path="res://objects/enemies/goblin/goblin.tscn" id="8_eh6ht"]
 
 [node name="CollectibleTest" type="Node2D"]
 
@@ -30,3 +31,6 @@ position = Vector2(693, 185)
 
 [node name="MediumPumpkin2" parent="." instance=ExtResource("7_5b26u")]
 position = Vector2(686, 495)
+
+[node name="Goblin" parent="." instance=ExtResource("8_eh6ht")]
+position = Vector2(852, 342)
