@@ -1,5 +1,4 @@
 TODO:
-	Fire object
 	Sheep, explosion
 	Enemy barrel
 	Enemy TNT guy

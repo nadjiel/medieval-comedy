@@ -1,0 +1,81 @@
+[gd_scene load_steps=7 format=3 uid="uid://q07hy8acvmtc"]
+
+[ext_resource type="Script" path="res://scripts/explosion.gd" id="1_82xih"]
+[ext_resource type="Texture2D" uid="uid://b3med1gqqkd45" path="res://addons/Tiny Swords/Effects/Explosion/Explosions.png" id="2_q642b"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1rxaw"]
+radius = 53.0094
+
+[sub_resource type="Animation" id="Animation_kfg0h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_o2as6"]
+resource_name = "explode"
+length = 0.9
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.2, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"explode"
+}, {
+"args": [],
+"method": &"queue_free"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame_coords")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0), Vector2i(4, 0), Vector2i(5, 0), Vector2i(6, 0), Vector2i(7, 0), Vector2i(8, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_278bw"]
+_data = {
+"RESET": SubResource("Animation_kfg0h"),
+"explode": SubResource("Animation_o2as6")
+}
+
+[node name="Explosion" type="Area2D"]
+script = ExtResource("1_82xih")
+damage = 20.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -27)
+texture = ExtResource("2_q642b")
+hframes = 9
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, -28)
+shape = SubResource("CircleShape2D_1rxaw")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_278bw")
+}
+autoplay = "explode"
